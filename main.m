@@ -76,7 +76,7 @@ msSvmMeas = music_speech_meas([1:20000 170000:190000],:);
 msSvmType = soundTypes([1:20000 170000:190000],:);
 
 %learn svm classificatior
-SVMModel = fitcsvm(msSvmMeas, msSvmType, 'KernelFunction', 'rbf');
+SVMModel = fitcsvm(msSvmMeas, msSvmType, 'KernelFunction', 'linear');
 
 %test svm classificator
 [svmLabel,svmScore] = predict(SVMModel, test_meas);
